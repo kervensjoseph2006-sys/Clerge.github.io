@@ -1,113 +1,196 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8">
-  <title>RICHARD TOPUP</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <style>
-    body {
-      background: #000;
-      color: #fff;
-      font-family: Arial, sans-serif;
-      margin: 0;
-      padding: 20px;
-    }
-    h1 {
-      text-align: center;
-      color: #00ffcc;
-      margin-bottom: 10px;
-    }
-    .box {
-      max-width: 500px;
-      margin: auto;
-      background: #111;
-      padding: 20px;
-      border-radius: 10px;
-    }
-    label {
-      display: block;
-      margin-top: 15px;
-    }
-    select, button {
-      width: 100%;
-      padding: 10px;
-      margin-top: 5px;
-      border-radius: 5px;
-      border: none;
-    }
-    button {
-      background: #25D366;
-      color: #000;
-      font-weight: bold;
-      cursor: pointer;
-      margin-top: 20px;
-    }
-    .price {
-      background: #222;
-      padding: 10px;
-      border-radius: 5px;
-      margin-top: 10px;
-      font-size: 14px;
-    }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>RICHARD TOPUP</title>
+
+<style>
+/* RESET */
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:Arial, sans-serif;
+}
+
+/* BODY + BACKGROUND */
+body{
+  min-height:100vh;
+  background-image:
+    linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.75)),
+    url("background.webp");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  color:#fff;
+}
+
+/* HEADER */
+header{
+  text-align:center;
+  padding:20px;
+}
+header img{
+  width:100px;
+  border-radius:50%;
+}
+header h1{
+  color:#00ffcc;
+  margin-top:10px;
+  letter-spacing:2px;
+}
+
+/* CONTAINER */
+.container{
+  max-width:520px;
+  margin:auto;
+  padding:20px;
+}
+
+/* CARD */
+.card{
+  background:rgba(0,0,0,0.75);
+  padding:20px;
+  border-radius:12px;
+  margin-top:20px;
+}
+
+/* PRICES */
+.price{
+  background:#111;
+  padding:12px;
+  border-radius:8px;
+  font-size:14px;
+}
+
+/* FORM */
+label{
+  display:block;
+  margin-top:15px;
+}
+input, select, button{
+  width:100%;
+  padding:10px;
+  margin-top:5px;
+  border:none;
+  border-radius:6px;
+}
+button{
+  background:#25D366;
+  color:#000;
+  font-weight:bold;
+  margin-top:20px;
+  cursor:pointer;
+}
+
+/* SUPPORT BUTTON */
+.support{
+  position:fixed;
+  bottom:15px;
+  right:15px;
+  background:#25D366;
+  color:#000;
+  padding:12px 16px;
+  border-radius:30px;
+  font-weight:bold;
+  text-decoration:none;
+}
+
+/* FOOTER */
+.footer{
+  text-align:center;
+  margin-top:20px;
+  font-size:12px;
+  color:#ccc;
+}
+</style>
 </head>
 
 <body>
 
-<h1>RICHARD TOPUP</h1>
+<header>
+  <img src="logo.png" alt="Logo Richard TopUp">
+  <h1>RICHARD TOPUP</h1>
+</header>
 
-<div class="box">
+<a class="support" href="https://wa.me/41897721">WhatsApp</a>
 
-  <div class="price">
-    <strong>Exemple prix :</strong><br>
-    100 diamonds = 500 HTG<br>
-    310 diamonds = 1500 HTG<br>
-    520 diamonds = 2500 HTG
-  </div>
+<div class="container">
 
-  <p><strong>Paiement MonCash :</strong> 34343423</p>
+<div class="card price">
+<b>Prix / Pri Diamonds:</b><br>
+100 💎 = 500 HTG<br>
+310 💎 = 1500 HTG<br>
+520 💎 = 2500 HTG<br>
+1060 💎 = 4800 HTG
+</div>
 
-  <label>Valè diamonds ou bezwen :</label>
-  <select id="diamonds">
-    <option>100</option>
-    <option>310</option>
-    <option>520</option>
-  </select>
+<div class="card">
 
-  <label>Vil ou :</label>
-  <select id="ville">
-    <option>Port-au-Prince</option>
-    <option>Delmas</option>
-    <option>Pétion-Ville</option>
-    <option>Cap-Haïtien</option>
-    <option>Les Cayes</option>
-    <option>Gonaïves</option>
-    <option>Jacmel</option>
-  </select>
+<label>Nom / Non</label>
+<input id="name">
 
-  <button onclick="sendWhatsApp()">Voye info sou WhatsApp</button>
+<label>ID Free Fire</label>
+<input id="ffid">
 
-  <p style="margin-top:15px;font-size:14px;">
-    Apre ou fin voye mesaj la, tanpri pran pasyans <strong>20 minit</strong>.
-  </p>
+<label>Diamonds</label>
+<select id="diamonds" onchange="updatePrice()">
+  <option value="100" data-price="500">100</option>
+  <option value="310" data-price="1500">310</option>
+  <option value="520" data-price="2500">520</option>
+  <option value="1060" data-price="4800">1060</option>
+</select>
+
+<label>Montant</label>
+<input id="price" readonly>
+
+<label>Paiement</label>
+<select id="payment" onchange="updatePayment()">
+  <option value="MonCash">MonCash</option>
+  <option value="NatCash">NatCash</option>
+</select>
+
+<p id="payinfo">MonCash : <b>34343423</b></p>
+
+<button onclick="sendWhatsApp()">Voye sou WhatsApp</button>
+
+<p style="margin-top:10px;font-size:13px">
+Livrez nan <b>20 minit</b>. Tanpri pran pasyans.
+</p>
+
+</div>
+
+<div class="footer">
+© 2026 RICHARD TOPUP
+</div>
 
 </div>
 
 <script>
-function sendWhatsApp() {
-  var diamonds = document.getElementById("diamonds").value;
-  var ville = document.getElementById("ville").value;
-
-  var message =
-    "Bonjour Richard Topup,%0A" +
-    "Mwen fin peye MonCash.%0A" +
-    "Diamonds: " + diamonds + "%0A" +
-    "Vil: " + ville + "%0A" +
-    "Merci.";
-
-  window.location.href =
-    "https://wa.me/41897721?text=" + message;
+function updatePrice(){
+  var d=document.getElementById("diamonds");
+  document.getElementById("price").value =
+    d.options[d.selectedIndex].dataset.price + " HTG";
 }
+function updatePayment(){
+  var p=document.getElementById("payment").value;
+  document.getElementById("payinfo").innerHTML =
+    p==="MonCash" ? "MonCash : <b>34343423</b>" : "NatCash : <b>41897721</b>";
+}
+function sendWhatsApp(){
+  var msg =
+  "Bonjour Richard Topup,%0A"+
+  "Nom: "+name.value+"%0A"+
+  "ID FF: "+ffid.value+"%0A"+
+  "Diamonds: "+diamonds.value+"%0A"+
+  "Montant: "+price.value+"%0A"+
+  "Paiement: "+payment.value+"%0A"+
+  "Mwen fin peye.";
+  window.location.href="https://wa.me/41897721?text="+msg;
+}
+updatePrice();
 </script>
 
 </body>
