@@ -1,0 +1,41 @@
+body {
+  background-color: #000000;
+  color: white;
+  font-family: Arial, sans-serif;
+  text-align: center;
+  padding: 20px;
+  margin: 0;
+}
+
+h1.site-name {
+  text-transform: uppercase; /* Tout lèt an MAJISKIL */
+  font-size: 40px;           /* Fè non an pi gwo */
+  letter-spacing: 3px;       /* Espas ant lèt yo */
+  color: #00bfff;            /* Ble klere pou non an */
+  margin-bottom: 10px;
+}
+
+p {
+  margin-bottom: 20px;
+}
+
+.box {
+  background-color: #111111;
+  padding: 15px;
+  margin: 15px auto;
+  width: 90%;
+  max-width: 400px;
+  border-radius: 8px;
+}
+
+input, select {
+  width: 90%;
+  padding: 8px;
+  margin-top: 8px;
+  border-radius: 4px;
+  border: none;
+}
+
+.paiement {
+  border: 2px solid #25D366;
+}
