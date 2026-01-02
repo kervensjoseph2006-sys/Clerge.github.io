@@ -1,57 +1,73 @@
-/* BACKGROUND IMAGE */
+/* Body ak background */
 body {
-  background-image: url('background.jpg');
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-
-  color: white;
-  font-family: Arial, sans-serif;
-  text-align: center;
-
-  padding: 20px;
-  margin: 0;
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background: url('background.webp') no-repeat center center fixed;
+    background-size: cover;
+    color: white;
 }
 
-/* OVERLAY NWA */
-body::before {
-  content: "";
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0,0,0,0.6);
-  z-index: -1;
+/* Container pou tout kontni */
+.container {
+    max-width: 500px;
+    margin: 50px auto;
+    background-color: rgba(0, 0, 0, 0.7); /* transparans pou wè background */
+    padding: 20px;
+    border-radius: 10px;
 }
 
-/* NON SITE */
-.site-name {
-  font-size: 40px;
-  letter-spacing: 3px;
-  margin-bottom: 10px;
+/* Titre sit la */
+h1 {
+    text-align: center;
+    font-size: 32px;
+    margin-bottom: 20px;
+    text-transform: uppercase;
 }
 
-/* BOX */
-.box {
-  background-color: rgba(0,0,0,0.7);
-  padding: 15px;
-  margin: 15px auto;
-  width: 90%;
-  max-width: 400px;
-  border-radius: 8px;
+/* Fòm nan */
+form {
+    display: flex;
+    flex-direction: column;
 }
 
-/* INPUT & SELECT */
-input, select {
-  width: 90%;
-  padding: 8px;
-  margin-top: 10px;
-  border-radius: 5px;
-  border: none;
+label {
+    margin: 10px 0 5px 0;
 }
 
-/* PAIEMENT */
-.paiement {
-  border: 2px solid #00ff99;
+input, select, button {
+    padding: 10px;
+    margin-bottom: 15px;
+    border-radius: 5px;
+    border: none;
+}
+
+input[type="number"], select, input[type="file"] {
+    width: 100%;
+}
+
+button {
+    background-color: #ffcc00;
+    color: black;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+button:hover {
+    background-color: #ff9900;
+}
+
+/* Infos MonCash/NatCash */
+.infos {
+    text-align: center;
+    margin-top: 20px;
+    font-weight: bold;
+}
+
+/* Message apwobasyon / tan livrezon */
+.message {
+    text-align: center;
+    margin-top: 20px;
+    font-style: italic;
 }
