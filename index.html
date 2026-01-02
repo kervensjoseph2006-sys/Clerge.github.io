@@ -1,197 +1,158 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="ht">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>RICHARD TOPUP</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Opsyon ak Fòm</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    /* Background ak bouton yo menm jan ak style.css minimal */
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: url('background.webp') no-repeat center center fixed;
+      background-size: cover;
+    }
 
-<style>
-/* RESET */
-*{
-  margin:0;
-  padding:0;
-  box-sizing:border-box;
-  font-family:Arial, sans-serif;
-}
+    .container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      gap: 20px;
+      padding: 20px;
+    }
 
-/* BODY + BACKGROUND */
-body{
-  min-height:100vh;
-  background-image:
-    linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.75)),
-    url("background.webp");
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  color:#fff;
-}
+    .option {
+      background: rgba(0,0,0,0.6);
+      color: #fff;
+      padding: 20px 40px;
+      border-radius: 12px;
+      text-align: center;
+      text-decoration: none;
+      width: 250px;
+      transition: 0.2s;
+      cursor: pointer;
+    }
 
-/* HEADER */
-header{
-  text-align:center;
-  padding:20px;
-}
-header img{
-  width:100px;
-  border-radius:50%;
-}
-header h1{
-  color:#00ffcc;
-  margin-top:10px;
-  letter-spacing:2px;
-}
+    .option:hover {
+      background: rgba(0,0,0,0.8);
+      transform: scale(1.05);
+    }
 
-/* CONTAINER */
-.container{
-  max-width:520px;
-  margin:auto;
-  padding:20px;
-}
+    /* Fòm yo kache pa default */
+    .form-container {
+      display: none;
+      background: rgba(0,0,0,0.6);
+      padding: 20px;
+      border-radius: 12px;
+      width: 300px;
+      margin-top: 20px;
+    }
 
-/* CARD */
-.card{
-  background:rgba(0,0,0,0.75);
-  padding:20px;
-  border-radius:12px;
-  margin-top:20px;
-}
+    .form-container input, .form-container button {
+      width: 100%;
+      padding: 8px;
+      margin-bottom: 10px;
+    }
 
-/* PRICES */
-.price{
-  background:#111;
-  padding:12px;
-  border-radius:8px;
-  font-size:14px;
-}
+    .form-container button {
+      background: #4CAF50;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      font-size: 16px;
+      cursor: pointer;
+    }
 
-/* FORM */
-label{
-  display:block;
-  margin-top:15px;
-}
-input, select, button{
-  width:100%;
-  padding:10px;
-  margin-top:5px;
-  border:none;
-  border-radius:6px;
-}
-button{
-  background:#25D366;
-  color:#000;
-  font-weight:bold;
-  margin-top:20px;
-  cursor:pointer;
-}
+    .form-container h2 {
+      color: white;
+      text-align: center;
+      margin-bottom: 10px;
+    }
 
-/* SUPPORT BUTTON */
-.support{
-  position:fixed;
-  bottom:15px;
-  right:15px;
-  background:#25D366;
-  color:#000;
-  padding:12px 16px;
-  border-radius:30px;
-  font-weight:bold;
-  text-decoration:none;
-}
-
-/* FOOTER */
-.footer{
-  text-align:center;
-  margin-top:20px;
-  font-size:12px;
-  color:#ccc;
-}
-</style>
+    .form-container label {
+      color: white;
+    }
+  </style>
 </head>
-
 <body>
+  <div class="container">
+    <h1 style="color:white;">Chwazi yon Option</h1>
 
-<header>
-  <img src="logo.png" alt="Logo Richard TopUp">
-  <h1>RICHARD TOPUP</h1>
-</header>
+    <!-- Bouton yo -->
+    <div class="option" onclick="showForm(1)">Option 1</div>
+    <div class="option" onclick="showForm(2)">Option 2</div>
+    <div class="option" onclick="showForm(3)">Option 3</div>
+    <div class="option" onclick="showForm(4)">Option 4</div>
+    <div class="option" onclick="showForm(5)">Option 5</div>
+    <div class="option" onclick="showForm(6)">Option 6</div>
+    <div class="option" onclick="showForm(7)">Option 7</div>
+    <div class="option" onclick="showForm(8)">Option 8</div>
 
-<a class="support" href="https://wa.me/41897721">WhatsApp</a>
+    <!-- Fòm pou chak option -->
+    <div id="form1" class="form-container">
+      <h2>Option 1 - Ranpli enfòmasyon</h2>
+      <form>
+        <label>Diama:</label><br>
+        <input type="text" name="diama"><br>
+        <label>ID:</label><br>
+        <input type="text" name="id"><br>
+        <label>Non:</label><br>
+        <input type="text" name="non"><br>
+        <label>Vil:</label><br>
+        <input type="text" name="vil"><br>
+        <button type="submit">Soumèt</button>
+      </form>
+    </div>
 
-<div class="container">
+    <div id="form2" class="form-container">
+      <h2>Option 2 - Ranpli enfòmasyon</h2>
+      <form>
+        <label>Diama:</label><br>
+        <input type="text" name="diama"><br>
+        <label>ID:</label><br>
+        <input type="text" name="id"><br>
+        <label>Non:</label><br>
+        <input type="text" name="non"><br>
+        <label>Vil:</label><br>
+        <input type="text" name="vil"><br>
+        <button type="submit">Soumèt</button>
+      </form>
+    </div>
 
-<div class="card price">
-<b>Prix / Pri Diamonds:</b><br>
-100 💎 = 500 HTG<br>
-310 💎 = 1500 HTG<br>
-520 💎 = 2500 HTG<br>
-1060 💎 = 4800 HTG
-</div>
+    <div id="form3" class="form-container">
+      <h2>Option 3 - Ranpli enfòmasyon</h2>
+      <form>
+        <label>Diama:</label><br>
+        <input type="text" name="diama"><br>
+        <label>ID:</label><br>
+        <input type="text" name="id"><br>
+        <label>Non:</label><br>
+        <input type="text" name="non"><br>
+        <label>Vil:</label><br>
+        <input type="text" name="vil"><br>
+        <button type="submit">Soumèt</button>
+      </form>
+    </div>
 
-<div class="card">
+    <!-- Ou ka ajoute form4 → form8 menm jan an -->
+  </div>
 
-<label>Nom / Non</label>
-<input id="name">
-
-<label>ID Free Fire</label>
-<input id="ffid">
-
-<label>Diamonds</label>
-<select id="diamonds" onchange="updatePrice()">
-  <option value="100" data-price="500">100</option>
-  <option value="310" data-price="1500">310</option>
-  <option value="520" data-price="2500">520</option>
-  <option value="1060" data-price="4800">1060</option>
-</select>
-
-<label>Montant</label>
-<input id="price" readonly>
-
-<label>Paiement</label>
-<select id="payment" onchange="updatePayment()">
-  <option value="MonCash">MonCash</option>
-  <option value="NatCash">NatCash</option>
-</select>
-
-<p id="payinfo">MonCash : <b>34343423</b></p>
-
-<button onclick="sendWhatsApp()">Voye sou WhatsApp</button>
-
-<p style="margin-top:10px;font-size:13px">
-Livrez nan <b>20 minit</b>. Tanpri pran pasyans.
-</p>
-
-</div>
-
-<div class="footer">
-© 2026 RICHARD TOPUP
-</div>
-
-</div>
-
-<script>
-function updatePrice(){
-  var d=document.getElementById("diamonds");
-  document.getElementById("price").value =
-    d.options[d.selectedIndex].dataset.price + " HTG";
-}
-function updatePayment(){
-  var p=document.getElementById("payment").value;
-  document.getElementById("payinfo").innerHTML =
-    p==="MonCash" ? "MonCash : <b>34343423</b>" : "NatCash : <b>41897721</b>";
-}
-function sendWhatsApp(){
-  var msg =
-  "Bonjour Richard Topup,%0A"+
-  "Nom: "+name.value+"%0A"+
-  "ID FF: "+ffid.value+"%0A"+
-  "Diamonds: "+diamonds.value+"%0A"+
-  "Montant: "+price.value+"%0A"+
-  "Paiement: "+payment.value+"%0A"+
-  "Mwen fin peye.";
-  window.location.href="https://wa.me/41897721?text="+msg;
-}
-updatePrice();
-</script>
-
+  <script>
+    function showForm(num) {
+      // kache tout fòm anvan
+      for (let i=1; i<=8; i++) {
+        let f = document.getElementById('form'+i);
+        if(f) f.style.display = 'none';
+      }
+      // montre fòm ki koresponn ak bouton
+      let form = document.getElementById('form'+num);
+      if(form) form.style.display = 'block';
+      // scroll nan fòm lan
+      form.scrollIntoView({behavior: 'smooth'});
+    }
+  </script>
 </body>
 </html>
