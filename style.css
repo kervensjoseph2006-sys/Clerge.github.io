@@ -1,26 +1,44 @@
+/* BODY — BACKGROUND + OVERLAY */
 body {
-  background-color: #000000;
-  color: white;
+  background-image: url('background.jpg'); /* non fichye ou a */
+  background-size: cover;       /* fè imaj la pran tout ekran */
+  background-position: center;  /* santre imaj la */
+  background-repeat: no-repeat; /* pa repete imaj la */
+  color: white;                 /* tèks rete vizib sou background */
   font-family: Arial, sans-serif;
   text-align: center;
   padding: 20px;
   margin: 0;
+  position: relative;
 }
 
+/* OVERLAY NWA pou tèks pi fasil pou li */
+body::before {
+  content: "";
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background-color: rgba(0,0,0,0.5); /* 50% nwa sou imaj la */
+  z-index: -1;
+}
+
+/* NON SITE AN GRAND LÈT */
 h1.site-name {
-  text-transform: uppercase; /* Tout lèt an MAJISKIL */
-  font-size: 40px;           /* Fè non an pi gwo */
-  letter-spacing: 3px;       /* Espas ant lèt yo */
-  color: #00bfff;            /* Ble klere pou non an */
+  text-transform: uppercase; /* tout lèt MAJISKIL */
+  font-size: 40px;           /* fè non an pi gwo */
+  letter-spacing: 3px;       /* espas ant lèt yo */
+  color: #00bfff;            /* ble klere pou non an */
   margin-bottom: 10px;
 }
 
+/* TI TEKS APA MOUN */
 p {
   margin-bottom: 20px;
 }
 
+/* BOX KONTAK / FORM */
 .box {
-  background-color: #111111;
+  background-color: #111111; /* nwa fènwa pou chak seksyon */
   padding: 15px;
   margin: 15px auto;
   width: 90%;
@@ -28,6 +46,7 @@ p {
   border-radius: 8px;
 }
 
+/* INPUT AK SELECT */
 input, select {
   width: 90%;
   padding: 8px;
@@ -36,6 +55,7 @@ input, select {
   border: none;
 }
 
+/* PAIEMENT BOX */
 .paiement {
-  border: 2px solid #25D366;
+  border: 2px solid #25D366; /* MonCash / NatCash box */
 }
