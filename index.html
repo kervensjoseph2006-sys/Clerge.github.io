@@ -1,50 +1,47 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8">
-  <title>Richard Topup</title>
-
-  <!-- LIEN KI KONEKTE HTML AK CSS -->
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Richard Top Up</title>
+    <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
+    <div class="container">
+        <h1>RICHARD TOP UP</h1>
 
-  <h1 class="site-name">RICHARD TOPUP</h1>
-  <p>Service de top-up & paiement</p>
+        <form action="#" method="post" enctype="multipart/form-data">
+            <!-- Valè diamant -->
+            <label for="diamant">Quelle valeur de diamant voulez-vous?</label>
+            <input type="number" id="diamant" name="diamant" placeholder="Ex: 1000" required>
 
-  <div class="box">
-    <h3>Choisissez la valeur de diamants</h3>
-    <select>
-      <option>100 Diamants — 500 HTG</option>
-      <option>310 Diamants — 1 500 HTG</option>
-      <option>520 Diamants — 2 500 HTG</option>
-      <option>1060 Diamants — 5 000 HTG</option>
-    </select>
-  </div>
+            <!-- Ville -->
+            <label for="ville">Où habitez-vous?</label>
+            <select id="ville" name="ville" required>
+                <option value="">Sélectionnez une ville</option>
+                <option value="Port-au-Prince">Port-au-Prince</option>
+                <option value="Cap-Haïtien">Cap-Haïtien</option>
+                <option value="Les Cayes">Les Cayes</option>
+                <option value="Gonaïves">Gonaïves</option>
+                <option value="Jacmel">Jacmel</option>
+                <option value="Hinche">Hinche</option>
+                <option value="Petit-Goâve">Petit-Goâve</option>
+                <option value="Saint-Marc">Saint-Marc</option>
+            </select>
 
-  <div class="box">
-    <h3>Ville de résidence</h3>
-    <select>
-      <option>Port-au-Prince</option>
-      <option>Delmas</option>
-      <option>Pétion-Ville</option>
-      <option>Les Cayes</option>
-      <option>Cap-Haïtien</option>
-      <option>Gonaïves</option>
-    </select>
-  </div>
+            <!-- Upload screenshot -->
+            <label for="screenshot">Téléversez votre fiche de transaction</label>
+            <input type="file" id="screenshot" name="screenshot" required>
 
-  <div class="box">
-    <h3>Uploader la preuve de paiement</h3>
-    <input type="file">
-  </div>
+            <button type="submit">Envoyer</button>
+        </form>
 
-  <div class="box paiement">
-    <h3>Paiement</h3>
-    <p>📱 MonCash : <b>34343423</b></p>
-    <p>💳 NatCash : <b>41897721</b></p>
-  </div>
+        <div class="infos">
+            <p>Numéro MonCash: 34343423</p>
+            <p>Numéro NatCash: 41897721</p>
+        </div>
 
+        <p class="message">Après l'envoi, vos diamants seront livrés dans 20 minutes. Merci de patienter!</p>
+    </div>
 </body>
 </html>
